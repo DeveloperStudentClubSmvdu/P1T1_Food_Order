@@ -1,0 +1,39 @@
+Table Admin {
+  Pnone_number integer [primary key]
+  email varchar
+  first_name varchar
+  last_name varchar
+  mobile_number bigint
+  Login_Token varchar
+  password text [note: 'encrypted form']
+  
+}
+
+Table users {
+  email varchar [primary key]
+  username varchar
+  Pnone_number integer
+  first_name varchar
+  last_name varchar
+  password text [note: 'encrypted form']
+}
+
+
+Table staf {
+  USER_id varchar [primary key]
+  password text [note: 'encrypted form']
+  status varchar
+}
+Table order {
+  
+  Menu varchar
+  paymet varchar
+  order varchar
+}
+
+
+Ref: Admin.Login_Token > staf.USER_id 
+Ref: Admin.Pnone_number > order.Menu
+Ref: users.email > order.paymet
+Ref: order.order > Admin.Pnone_number
+Ref: order.order > staf.USER_id  
