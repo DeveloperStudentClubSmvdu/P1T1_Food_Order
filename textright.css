@@ -1,0 +1,12 @@
+.image-and-text {
+    display: flex; 
+    align-items: center; 
+}
+
+.image-and-text img {
+    width: 50%; 
+}
+
+.image-and-text p {
+    margin-left: 20px; 
+}
